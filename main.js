@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const inscricaoForm = document.getElementById('inscricaoForm');
     const listaInscricoes = document.getElementById('listaInscricoes');
-    const apiUrl = '/api/inscricoes/'; 
+    const apiUrl = 'http://localhost:8000/api/'; 
 
     function carregarInscricoes() {
         fetch(apiUrl)
