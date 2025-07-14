@@ -1,156 +1,159 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
-body, h1, h2, h3, p, ul, li, form, input, button {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #F6F0F0;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #D1D8BE;
     color: #333;
     line-height: 1.6;
-    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 header {
-    background-color: #fff;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: grid;
-    justify-content: center;
-    align-items:center;
-}
-
-ul.navegacao {
-    list-style: none;           
-    padding: 0;                 
-    display: flex;              
-    justify-content: center;    
-    gap: 25px;                 
-}
-
-.navegacao a {
-    text-decoration: none;
-    color: #727D73;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navegacao a:hover {
-    background-color: #727D73;
-    color: #fff;
-}
-
-.contact {
-    padding: 2rem;
-    max-width: 600px;
-    margin: 2rem auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #EEEFE0;
+    color: #819A91;
+    padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.contact .info h1, #lista h2 {
-    font-family: 'Poppins', sans-serif;
-    color: #AAB99A;
-    margin-bottom: 0.5rem;
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-.contact .info p {
-    color: #666;
-    margin-bottom: 1.5rem;
+.card h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 10px;
 }
 
-/* Estilização do Formulário */
-.contact.form #inscricaoForm {
+.card.full-width {
+    grid-column: 1 / -1;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.contact.form input[type="number"] {
+form#form-curso, form#form-aluno {
+    flex-direction: row;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-.contact.form button[type="submit"] {
-    background-color: #727D73;
-    color: #F0F0D7;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 4px;
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: #819A91;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+button {
     cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    background-color: #819A91;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.contact.form button[type="submit"]:hover {
-    background-color: #AAB99A;
+button:hover {
+    background-color: #819A91;
 }
 
-#lista {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 2rem auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+button.delete-btn {
+    background-color: #e74c3c;
 }
 
-#lista h2 {
-    color: #727D73;
-    text-align: center;
+button.delete-btn:hover {
+    background-color: #c0392b;
 }
 
-#listaInscricoes {
-    list-style: none;
+.list-container {
+    margin-top: 20px;
 }
 
-#listaInscricoes li {
-    background-color: #f9f9f9;
-    padding: 1rem;
+.list-container h3 {
+    color: #34495e;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    max-height: 200px;
+    overflow-y: auto;
     border: 1px solid #eee;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
-    transition: background-color 0.3s;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-#listaInscricoes li:hover {
-    background-color: #e9ecef;
+ul li {
+    padding: 8px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-/* Estilos do Rodapé */
-footer {
-    background-color: #727D73;
-    color: #D0DDD0;
-    text-align: center;
-    padding: 2.2rem;
-    margin-top: 2rem;
+ul li:last-child {
+    border-bottom: none;
 }
 
-footer h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-@media (max-width: 600px) {
-    .contact, #lista {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e1e1e1;
+}
 
-    header {
-        padding: 1rem;
-    }
+thead {
+    background-color: #ecf0f1;
+    color: #34495e;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
 }

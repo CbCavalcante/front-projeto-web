@@ -1,53 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrições Cursos</title>
+    <title>Sistema de Inscrições</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <header>
-        <nav>
-            <ul class="navegacao">
-                <li><a href="#inscricao">Inscrição</a></li>
-                <li><a href="#lista">Inscritos</a></li>
-            </ul>
-        </nav>
+        <h1>Sistema de Gerenciamento de Inscrições</h1>
     </header>
 
-    <section class="contact" id="inscricao">
-        <div class="contact info">
-            <h1>Formulário de Inscrição</h1>
-            <span></span>
-            <p>Preencha os campos abaixo para realizar a inscrição.</p>
-        </div>
+    <main class="container">
+        <section class="card">
+            <h2>Cursos</h2>
+            <form id="form-curso">
+                <input type="text" id="nome-curso" placeholder="Nome do novo curso" required>
+                <button type="submit">Adicionar Curso</button>
+            </form>
+            <div class="list-container">
+                <h3>Cursos Existentes</h3>
+                <ul id="lista-cursos">
+                    </ul>
+            </div>
+        </section>
 
-        <div class="contact form">
-            <form id="inscricaoForm">
-                <input type="number" id="id_aluno" placeholder="ID do Aluno" required>
-                <input type="number" id="id_curso" placeholder="ID do Curso" required>
+        <section class="card">
+            <h2>Alunos</h2>
+            <form id="form-aluno">
+                <input type="text" id="nome-aluno" placeholder="Nome do novo aluno" required>
+                <button type="submit">Adicionar Aluno</button>
+            </form>
+            <div class="list-container">
+                <h3>Alunos Cadastrados</h3>
+                <ul id="lista-alunos">
+                    </ul>
+            </div>
+        </section>
+
+        <section class="card full-width">
+            <h2>Realizar Inscrição</h2>
+            <form id="form-inscricao">
+                <div class="form-group">
+                    <label for="select-aluno">Aluno:</label>
+                    <select id="select-aluno" required>
+                        <option value="">Selecione um aluno</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="select-curso">Curso:</label>
+                    <select id="select-curso" required>
+                        <option value="">Selecione um curso</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="data-inscricao">Data da Inscrição:</label>
+                    <input type="date" id="data-inscricao" required>
+                </div>
                 <button type="submit">Realizar Inscrição</button>
             </form>
-        </div>
-    </section>
+        </section>
 
-    <section id="lista">
-        <h2>Inscrições Realizadas</h2>
-        <ul id="listaInscricoes">
-            </ul>
-    </section>
-
-    <footer>
-        <h3>© API Django Rest - WEB Project | Powered by Cauã and Lúcio</h3>
-    </footer>
+        <section class="card full-width">
+            <h2>Inscrições Realizadas</h2>
+            <table id="tabela-inscricoes">
+                <thead>
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Curso</th>
+                        <th>Data da Inscrição</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+    </main>
 
     <script src="main.js"></script>
-
 </body>
-
 </html>
